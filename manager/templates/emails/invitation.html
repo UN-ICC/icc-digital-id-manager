@@ -1,0 +1,73 @@
+{% load qr_code %}
+{% load static %}
+<div style="max-width:600px;width:100%;background:#FFF;display:block;margin:0px auto;font-family: Arial,sans-serif;font-size:12px;text-align:center;padding:30px 0">
+    <table width="100%" height="100px">
+        <tr>
+            <td style="text-align:center;"><div style="display:inline-block;max-width:100%" ><img src="{{ logo_url }}" align="center" width="100" style="border-radius:25%;max-width:100px;border:1px solid #ebebeb" alt="UNITED NATIONS" tabindex="0"></div></td>
+        </tr>
+    </table>
+    <br>
+    <table style=" color:#333;width:100%;margin:0px" cellpadding="15px" cellspacing="0px">
+        <tbody>
+        <tr>
+            <td align="center" style="text-align:center">
+                <h2 style="font-size:21px;line-height:26px;margin-bottom:0;margin-top:0;padding:0;text-align:center;color:#4c4c4c;font-family:'HelveticaNeue-Light','Helvetica Neue',Helvetica,Arial,sans-serif" aria-label="UNITED NATIONS">
+                    <span style="font-family:Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';color:#030303;font-size:24px">UNITED NATIONS</span>
+                    <div style="font-family:-Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';color:#030303;font-size:24px">Digital Credentials</div>
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background:#FFF;padding:40px 5%;color:#4d4d4d;border-top:1px solid #bbbbbb;;text-align: center;font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';line-height: 24px;font-size:14px;">
+                The United Nations invites you to obtain the following credential: <b>{{ credential_name }}</b>
+                <br>
+                <br>
+                In order to get the credential, you have to install the <b>UN Digital ID</b> app:
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+            <table width="100%" style="margin-top: 10px">
+                <tbody>
+                <tr>
+                    <td style="text-align: center;">
+                        <a href="https://play.google.com/store/apps/details?id=com.undigitalid" target="_blank" title="UN Digital ID Android app">
+                            <img src="{{ google_play_logo_url }}" alt="Download from Google Play" height="55" width="160">
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="background:#FFF;padding:40px 5%;color:#4d4d4d;border-top:1px solid #bbbbbb;;text-align: center;font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';line-height: 24px;font-size:14px;">
+                Please, scan this QR code with the UN Digital ID app:
+                <br>
+                <img src="{{ base_url }}{% static qr_code_img %}" alt="QR code" width="300">
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td style="background:#FFF;padding:40px 5%;color:#4d4d4d;border-top:1px solid #bbbbbb;;text-align: center;border-bottom:1px solid #bbbbbb;;font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';line-height: 24px;font-size:14px;">
+                If you are seeing this in a device that has the app installed, please click
+                <a href="{{ deep_link_redirect }}">here</a>.
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <table width="100%" height="100px">
+        <tr>
+            <td align="center"><p style="font-size:10px;line-height:16px;color:#888;margin:0;padding:0;font-family:Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'">
+                <span style="white-space:nowrap"> <a style="text-decoration:none; color:#307FC3" href="https://digicert.unicc.org/doc/privacy" target="_blank">Terms of Service and Privacy Policy</a> </span>
+                <br>
+                Copyright © {% now 'Y' %} UNICC. <span style="white-space:nowrap">United Nations International Computing Centre.</span><br>
+            </td>
+        </tr>
+    </table>
+</div>

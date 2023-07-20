@@ -1,0 +1,10 @@
+./bitbucket-pipelines.yml
+./conftest.py
+./demo
+./demo-public
+./.git
+./github
+./.gitignore
+./README.md
+./pyproject.toml
+./sonar-project.properties
